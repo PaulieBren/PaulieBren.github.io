@@ -1,48 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo 2</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <title>NMPF Policies</title>
+
+    <!-- SQLite in browser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+
+    <!-- Link external CSS -->
+    <link rel="stylesheet" href="files/Style/style.css" />
   </head>
+
   <body>
-    <div class="container d-flex align-items-center h-100">
-      <div class="row">
-        <header class="text-center col-12">
-          <h1 class="text-uppercase">
-            <strong>The Biggest Startup Event Of The Year</strong>
-          </h1>
-          <div class="buffer col-12>"></div>
-        </header>
-        <section class="text-center col-12">
-          <hr />
-          <button type="button" class="btn btn-primary btn-xl">
-            Find out more
-          </button>
-        </section>
+    <div class="headtxt">
+      <h1>National Marine Policy Framework (NMPF)</h1>
+      <img src="files/images/mara.jpg" height="125" width="250" />
+    </div>
+    <p class="intro">
+      The
+      <a
+        href="https://assets.gov.ie/static/documents/national-marine-planning-framework.pdf"
+        class="nmpflink"
+        target="blank"
+        >National Marine Planning Framework (NMPF)</a
+      >
+      brings together all marine-based human activities for the first time,
+      outlining the Government’s vision, objectives and marine planning policies
+      for each marine activity. The table below presents the core policy areas
+      and their objectives.
+    </p>
+    <div class="projpol">
+      <div class="project">
+        <label class="type" for="itemSelect">Choose a Project Type:</label>
+        <select class="typedd" id="itemSelect" onchange="updateInputs()">
+          <option value="">-- Select --</option>
+
+
+          <option
+            value="Berth"
+            standard="Access Policy 2, Social Benefits Policy 1,Social Benefits Policy 2, Co-existence Policy 1"
+            specific="Infrastructure Policy 1, Employment Policy 1,Tourism Policy 1, Tourism Policy 3, Ports, Harbours and Shipping Policy 5"
+          >
+            Berth/ Pontoons/ Slipways/ Gangways
+
+          </option>
+
+           <option
+            value="bridge"
+            standard="Access Policy 2, Infrastructure Policy 1"
+            specific="Tourism Policy 1"
+          >
+            Bridges/ Roads (State Infrastructure)
+
+          </option>
+
+          </option>
+
+           <option
+            value="coastal"
+            standard="Social Benefits Policy 1, Access Policy 1"
+            specific="Co-existence Policy 1, Infrastructure Policy 1,Social Benefits Policy 2, Access Policy 2, Tourism Policy 1, Sport and Recreation Policy 1"
+          >           
+           Coastal Protection/Flood Relief Scheme
+
+          </option>
+
+           <option
+            value="electric"
+            standard="Co-existence Policy 1, Infrastructure Policy 1"
+            specific="Social Benefits Policy 1, Transmission Policy 4"
+"
+          >
+            Electric Cable 
+          </option>
+
+          <option
+            value="mobility"
+            standard="Access Policy 2, Social Benefits Policy 2, Infrastructure Policy 1"
+            specific="No Case Specific Policies Identified"
+"
+          >
+            Mobility Impaired Access  (state infrastructure)
+ 
+          </option>
+
+          <option
+            value="ore"
+            standard="Employment Policy 1, Infrastructure Policy 1, ORE Policy 1, ORE Policy 2, ORE Policy 10"
+            specific="ORE Policy 7, ORE Policy 18, Ports, Harbours and Shipping Policy 5"
+"
+          >
+            ORE- Supporting infrastructure (ports)
+ 
+          </option>
+
+         <option
+            value="renewable"
+            standard="Employment Policy 1, Infrastructure Policy 1"
+
+            specific="No Case Specific Policies Identified"
+"
+          >
+            Renewable Energy (Non-Wind) 
+          </option>
+
+          <option
+            value="storage"
+            standard="Employment Policy 1, Infrastructure Policy 1"
+            specific="No Case Specific Policies Identified"
+"
+          >
+            Storage (Renewable gas/ fuel)
+          </option>
+
+          <option
+            value="telecoms"
+            standard="Co-existence Policy 1, Infrastructure Policy 1"
+            specific="Transmission Policy 4"
+"
+          >
+            Telecoms Cable 
+          </option>
+
+          <option
+            value="waste"
+            standard="Social Benefits Policy 1, Social Benefits Policy 2, Co-existence Policy 1, Infrastructure Policy 1, Wastewater Treatment and Disposal Policy 1"
+            specific="Transmission Policy 4"
+"
+          >
+            Wastewater Treatment Plant
+          </option>
+
+
+          <option
+            value="waterActivity"
+            standard="Access Policy 2, Employment Policy 1, Social Benefits Policy 1 ,Social Benefits Policy 2"
+            specific="Infrastructure Policy 1, Sport and Recreation Policy 1, Sport and Recreation Policy 4, Tourism Policy 1"
+          >
+            Water Activity centres/ facilities
+          </option>
+
+          <option
+            value="mains"
+            standard="Social Benefits Policy 1, Co-existence Policy 1, Infrastructure Policy 1"
+            specific="No Case Specific Policies Identified"
+"
+          >
+            Water Mains
+
+          </option>
+
+          
+          
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+
+           
+
+
+
+
+
+
+
+
+        </select>
+      </div>
+
+      <div class="pol">
+        <div class="std">
+          <label class="lbl">Standard Policies: </label>
+          <input type="text" id="std" readonly />
+        </div>
+
+        <div class="spec">
+          <label class="lbl">Potential Policies (non-exhaustive): </label>
+          <input type="text" id="spec" readonly />
+        </div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
-      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
-      crossorigin="anonymous"
-    ></script>
+
+
+
+    <div class="drops">
+      <div class="Filters">Chapter:</div>
+      <select id="chapterFilter">
+        <option value="">-- Show All --</option>
+      </select>
+      <div class="Filters">Policy:</div>
+      <select id="policyFilter">
+        <option value="">-- Show All --</option>
+      </select>
+     
+      <div class="buttonsGroup">
+      <button id="resetBtn">Reset Filters</button><br />
+      <button id="add-btn">Load Database</button>
+      <input
+        type="file"
+        id="db-file-input"
+        accept=".sqlite"
+        style="display: none"
+      />
+
+
+        <button id="sqlite"><a href="https://mara.cloud.gov.ie/apps/eDocs/S/MARA005/Files/MARA005-005-2024/10%20Temporary%20Documents/NMPF%20Database%20Backup"
+        class="dblink"
+        target="blank"
+        >Database File</a
+      ></button>
+      </div>
+
+
+
+   
+    <div class="toggleBox">
+    <label class="toggle">
+      <input type="checkbox" />
+      <span class="title">View Database Install Guide</span>
+      <div class="content">
+        <ol>
+          <li>Click link to "Database File"</li>
+          <li>Download DB (.sqlite) file to your H:Drive</li>
+          <li>Click "Load Database" button</li>
+          <li>Locate the file downloaded in step 2</li>
+          <li>Database should now be loaded</li>
+        </ol>
+      </div>
+    </label>
+    </div>
+
+ </div>
+    <table id="policyTable">
+      <thead>
+        <tr>
+          <th>Chapter</th>
+          <th>Policy</th>
+          <th>Objective</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- External JS -->
+    <script src="files/js/script.js"></script>
   </body>
 </html>
