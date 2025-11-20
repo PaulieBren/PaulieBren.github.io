@@ -1,48 +1,246 @@
-body,
-html {
-  width: 100%;
-  height: 100%;
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  background: url(header.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+/* General Body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background: linear-gradient(90deg, #005069 0%, #41719e 60%, #00b9b5 100%);
 }
 
+/* Headings */
 h1 {
-  font-size: 3rem;
+  color: white;
+  padding: 25px 30px; /* combined padding */
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
 }
 
-hr {
-  margin: 20px auto;
-  color: #f05f44;
-  border: 3px solid #f05f44;
-  max-width: 65px;
-  opacity: 1;
+/* Header Text Section */
+.headtxt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
-.btn {
-  font-weight: 700;
-  border-radius: 300px;
-  text-transform: uppercase;
+/* Intro Text */
+.intro {
+  padding-top: 10px;
+  color: white;
+  text-align: justify;
+  font-size: 20px;
 }
 
-.btn-primary {
-  background-color: #f05f44;
-  border-color: #f05f44;
+/* Links */
+.nmpflink {
+  color: #00b9b5;
+}
+.buttonsGroup {display:flex;
+Justify-content:center;
+gap:10px;}
+
+.buttonsGroup button{flex:1;}
+
+.dblink {color:white;}
+
+/* Project Rows */
+.project,
+.std,
+.spec {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.btn-primary:hover {
-  background-color: #ee4b08;
-  border-width: 4px;
-  border-color: #ee4b08;
-}
-.btn-xl {
-  padding: 1rem 2rem;
+.spec {
+  margin-bottom: 0; /* override margin-bottom for last row if needed */
 }
 
-.buffer {
-  height: 10rem;
+/* Typedd & IDs */
+.typedd,
+#spec,
+#std {
+  color: #005069;
+  
+  font-family: Arial, sans-serif;
 }
+
+#spec,
+#std {
+  height: 25px;
+  line-height: 25px;
+  padding-left: 5px;
+}
+
+/* Types & Labels */
+.type,
+.lbl {
+  width: 300px; /* corrected "Width" -> "width" */
+  color: white;
+  font-weight: bold;
+}
+
+/* Project Container */
+.projpol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  height: auto;
+  border: 3px solid white;
+  border-radius: 15px;
+  padding: 10px;
+  width: auto;
+  background-color: #00b9b5;
+  box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Filters Section */
+.Filters {
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* Drop-downs / Controls */
+.drops {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+select,
+button {
+  padding: 6px;
+  font-size: 14px;
+  margin: 5px 0;
+  color: #005069;
+  font-family: Arial, sans-serif;
+  border-radius:15px;
+}
+
+button {
+  background-color: #00b9b5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005069;
+}
+
+.copy-btn {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+/* Table Styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: white;
+  margin-top: 20px;
+  border: 3px solid #00b9b5; /* fixed syntax */
+}
+
+th,
+td {
+  border: 2px solid #00b9b5;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+td:nth-child(1),
+td:nth-child(2) {
+  text-align: center;
+  color: #005069;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+
+td:nth-child(3) {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
+  color: #005069;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  max-width: 600px;
+}
+
+th {
+  background-color: #005069;
+  color: white;
+  font-weight: bolder;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.toggle input {
+  display: none;
+  width: 250px;
+  height:150px;
+}
+
+.toggle .title {
+
+
+  /*display: block;*/
+  padding: 10px;
+  background: #eee;
+  cursor: pointer;
+   height:auto;
+  width: 250px;
+  color: white;
+  background-color: #00b9b5;
+  color:#005069;
+  border:2px solid #005069;
+  font-weight:bold;
+  border-radius: 15px;
+  text-align: center;
+  }
+
+.toggle .content {
+  justify-content:center;
+  margin-top: 20px;
+  max-height: 0;
+  overflow: hidden;
+  background: #005069;
+  padding: 0 10px;
+  transition: max-height 0.3s ease;
+  width: fit-content;
+  text-align: left;
+  border-radius: 15px;
+  color: white;
+}
+
+.toggle input:checked ~ .content {
+  max-height: 200px; /* adjust as needed */
+  padding: 10px;
+}
+
+
+
+.dblink{text-decoration:none;}
+
+ #resetBtn,#add-btn,#sqlite
+ {background-color: #005069;
+  width:100px;
+  height:50px;
+  transition: transform 0.4s ease;
+}
+
+ #resetBtn:hover,#add-btn:hover,#sqlite:hover {
+  background-color: #00b9b5;
+transform:scale(1.1);}
+
+ .toggleBox {display:flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+margin-top:15px;}
+
